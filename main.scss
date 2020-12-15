@@ -1,0 +1,33 @@
+body {
+    overflow: hidden;
+}
+
+
+.vertical.menu{
+    height:100vh;
+    padding-top:20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+.content {
+    height:100vh;
+    padding-top:20px;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.progress {
+    width: auto;
+    max-width: 350px;
+}
+
+input[type=text], textarea {
+    width: 100%;
+    max-width: 450px;
+    word-wrap: break-word;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
