@@ -121,5 +121,27 @@ export var sieveOfEratosthenes = function(nthPrime) {
     return primesFound[nthPrime-1]
 }
 
+export var maxAdjacentDigitsProduct = function(nStr, m){
+    var maxProduct = 0
+    var currProd = 1
+    nStr = nStr.replace( /[\r\n]+/gm, "" );
+    for (var i=0; i<nStr.length-parseInt(m); i++){
+        for (var j=i; j<i+parseInt(m); j++){
+            currProd *= parseInt(nStr[j]);
+        }
+        console.log(currProd)
+        maxProduct = Math.max(currProd, maxProduct)
+        if (Number.isNaN(currProd)){
+            console.log("Idxs ", i, j)
+            for (var j=i; j<i+parseInt(m); j++){
+                console.log(nStr[j]);
+            }
+        }
+        currProd = 1
+    }
+    console.log(maxProduct)
+    return maxProduct
+}
+
 
 

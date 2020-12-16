@@ -55,9 +55,9 @@ new Vue({
         console.log("Calculating Set to True")
         console.log("Computing")
         setTimeout(() => {
-            this.filteredProblems[this.activeIndex].result = this.filteredProblems[this.activeIndex].function(
-                this.filteredProblems[this.activeIndex].inputs[0].value
-            )
+            let allArgs = this.filteredProblems[this.activeIndex].inputs.map(input => input.value);
+            console.log(allArgs)
+            this.filteredProblems[this.activeIndex].result = this.filteredProblems[this.activeIndex].function(...allArgs)
             console.log("Computation complete")
             this.calculating = false
         }, 100)

@@ -170,7 +170,7 @@ export default
                 {
                     name: 'n',
                     value: null,
-                    comment: 'Please enter a natural number...  ',
+                    comment: 'Natural number to check...  ',
                     placeholder: 'Enter N...',
                     label: 'N',
                     type: 'largeinput',
@@ -179,13 +179,15 @@ export default
                 {
                     name: 'm',
                     value: null,
-                    comment: 'Please enter a natural number...  ',
+                    comment: 'Number of adjacent digits to consider... ',
                     placeholder: 'Enter M...',
                     label: 'M',
                     type: 'input',
                     subtype: 'number',
                 },
             ],
+            "function": solutions.maxAdjacentDigitsProduct,
+            "result": null
         },
         {
             "title": "Special Pythagorean triplet",
