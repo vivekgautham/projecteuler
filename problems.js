@@ -1,4 +1,3 @@
-import * as solutions from './solutions.js'
 
 export default
 {
@@ -19,7 +18,8 @@ export default
                     subtype: 'number',
                 },
             ],
-            "function": solutions.sumOfMultiplesOf3or5,
+            "functionName": 'sumOfMultiplesOf3or5',
+            "function": self.solutions['sumOfMultiplesOf3or5'],
             "result": null
         },
         {
@@ -38,7 +38,8 @@ export default
                     subtype: 'number',
                 },
             ],
-            "function": solutions.sumOfEvenValuedFiboTerms,
+            "functionName": 'sumOfEvenValuedFiboTerms',
+            "function": self.solutions['sumOfEvenValuedFiboTerms'],
             "result": null
         },
         {
@@ -57,7 +58,8 @@ export default
                     subtype: 'number',
                 },
             ],
-            "function": solutions.largestPrimeFactorOfN,
+            "functionName": 'largestPrimeFactorOfN',
+            "function": self.solutions['largestPrimeFactorOfN'],
             "result": null
         },
         {
@@ -76,7 +78,8 @@ export default
                     subtype: 'number',
                 },
             ],
-            "function": solutions.largestPalindromeFromProductOfNDigitnumbers,
+            "functionName": 'largestPalindromeFromProductOfNDigitnumbers',
+            "function": self.solutions['largestPalindromeFromProductOfNDigitnumbers'],
             "result": null
         },
         {
@@ -95,7 +98,8 @@ export default
                     subtype: 'number',
                 },
             ],
-            "function": solutions.smallestMultiple,
+            "functionName": 'smallestMultiple',
+            "function": self.solutions['smallestMultiple'],
             "result": null
         },
         {
@@ -114,7 +118,8 @@ export default
                     subtype: 'number',
                 },
             ],
-            "function": solutions.differenceOfSumOfSquareAndSquareOfSum,
+            "functionName": 'differenceOfSumOfSquareAndSquareOfSum',
+            "function": self.solutions['differenceOfSumOfSquareAndSquareOfSum'],
             "result": null
 
         },
@@ -134,7 +139,8 @@ export default
                     subtype: 'number',
                 },
             ],
-            "function": solutions.sieveOfEratosthenes,
+            "functionName": 'sieveOfEratosthenes',
+            "function": self.solutions['sieveOfEratosthenes'],
             "result": null
         },
         {
@@ -186,20 +192,54 @@ export default
                     subtype: 'number',
                 },
             ],
-            "function": solutions.maxAdjacentDigitsProduct,
+            "functionName": 'maxAdjacentDigitsProduct',
+            "function": self.solutions['maxAdjacentDigitsProduct'],
             "result": null
         },
         {
             "title": "Special Pythagorean triplet",
             "id": 9,
             "active": false,
-            "description": "A Pythagorean triplet is a set of three natural numbers, a < b < c, for which, There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the product abc"
+            "description": `
+            <p>A Pythagorean triplet is a set of three natural numbers, <var>a</var> &lt; <var>b</var> &lt; <var>c</var>, for which,</p>
+            <div class="center"> <var>a</var><sup>2</sup> + <var>b</var><sup>2</sup> = <var>c</var><sup>2</sup></div>
+            <p>For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.</p>
+            <p>There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</var> + <var>c</var> = 1000.<br />Find the product <var>abc</var>.</p>
+            `,
+            "inputs": [
+                {
+                    name: 'n',
+                    value: null,
+                    comment: 'Enter a sum under which to check Special Triplet...  ',
+                    placeholder: 'Enter N...',
+                    label: 'N',
+                    type: 'input',
+                    subtype: 'number',
+                },
+            ],
+            "functionName": 'pythagoreanTripletAddingToSum',
+            "function": self.solutions['pythagoreanTripletAddingToSum'],
+            "result": null
         },
         {
             "title": "Summation of Primes",
             "id": 10,
             "active": false,
-            "description": "The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17. Find the sum of all the primes below two million."
+            "description": "The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17. Find the sum of all the primes below two million or below N.",
+            "inputs": [
+                {
+                    name: 'n',
+                    value: null,
+                    comment: 'Enter a number N below which sum of primes needed...  ',
+                    placeholder: 'Enter N...',
+                    label: 'N',
+                    type: 'input',
+                    subtype: 'number',
+                },
+            ],
+            "functionName": 'sumOfAllPrimesBelowNum',
+            "function": self.solutions['sumOfAllPrimesBelowNum'],
+            "result": null
         },
         {
             "title": "Largest product in a grid",

@@ -68,6 +68,10 @@ const ProblemsTemplate = `
         Compute
       </button>
 
+      <button class="medium ui teal button" v-on:click="computeOnWorkerAndNotify()">
+        Compute in Background
+      </button>
+
       <br/><br/>
 
       <template v-if="calculating">
@@ -83,10 +87,25 @@ const ProblemsTemplate = `
         </div>
       </template>
 
+      <h5 class="ui header" v-if="problemFactoids">
+        Interesting Factoids
+      </h5>
+
+      <div v-if="problemFactoids" id="factoid" class="ui raised segment"  style="width:90%">
+        <span v-html="currentFactoid"></span>
+        <button id="factoidNext" class="ui right floated button" v-on:click="factoidNext()">
+          Next
+        </button>
+      </div>
+
     </div>
   </div>
 
 </div>
 `
-//<i class="close icon" v-on:click="clearSearch()"></i>
 export { ProblemsTemplate }
+/*
+$("factoidNext").click(function(){
+    $('.ui.raised.segment').transition('horizontal flip');
+});
+*/

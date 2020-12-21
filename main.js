@@ -8,6 +8,8 @@ import {
 } from './templates/problems-template.js'
 
 import problemsdata from './problems.js'
+import * as work from './worker-caller.js'
+import factoids from './factoids.js'
 
 new Vue({
     el: '#app',
@@ -21,7 +23,27 @@ new Vue({
       problems: problemsdata.problems,
       filteredProblems: problemsdata.problems,
       calculating: false,
+      problemFactoidIdx: null
     },
+
+    computed: {
+      problemFactoids: function(val) {
+          if (factoids.hasOwnProperty(this.activeIndex+1)){
+            this.problemFactoidIdx = 0
+            return factoids[this.activeIndex+1]
+          }
+          else{
+            this.problemFactoidIdx = null
+            return null
+          }
+      },
+      currentFactoid: function(val) {
+        if (this.problemFactoids){
+          return this.problemFactoids[this.problemFactoidIdx]
+        }
+      }
+    },
+
     methods: {
       searchProblems(searchQuery){
         console.log(searchQuery)
@@ -62,6 +84,22 @@ new Vue({
             this.calculating = false
         }, 100)
       },
+      computeOnWorkerAndNotify() {
+        this.calculating = true
+        this.filteredProblems[this.activeIndex].result = null
+        console.log("Calculating Set to True")
+        work.callWorker(this.filteredProblems[this.activeIndex], this)
+      },
+
+      factoidNext() {
+        console.log("Clicked")
+        //$(this).parent().transition('glow')
+        this.problemFactoidIdx += 1
+        if (this.problemFactoidIdx  >= this.problemFactoids.length){
+          this.problemFactoidIdx = 0
+        }
+      },
+
       selectProblem(index){
         if (this.filteredProblems.length > 0){
             this.filteredProblems.forEach(function(val, key){
