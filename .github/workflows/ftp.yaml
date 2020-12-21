@@ -1,14 +1,16 @@
-name: FTP
-on:
-  push:
+on: push
+name: 🚀 Deploy website on push
 jobs:
-  ci:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
-        with:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2.3.2
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
