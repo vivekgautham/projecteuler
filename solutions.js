@@ -209,6 +209,51 @@
         return "a : " + a  + " b : "  + b + " c : " + c + ((a != null) ? (" Product: " + a*b*c) : " No solution exists ")
     }
 
+    exports.productsInAGrid = function (nStr, m){
+        m = parseInt(m)
+        var maxProduct = 0
+        var currProd = 1
+        nStr = nStr.replace( /[\r\n]+/gm, "EL")
+        var matrix = []
+        var rowsStrs = nStr.split("EL")
+        console.log(rowsStrs)
+        for (let i=0; i<rowsStrs.length; i++){
+            let rowStr = rowsStrs[i].split(" ")
+            let rowNums = []
+            for (let i=0; i<rowStr.length; i++){
+                rowNums.push(parseInt(rowStr[i]));
+            }
+            matrix.push(rowNums)
+        }
+        var maxProduct = 0
+        for (var i = 0; i < matrix.length; i++){
+            for (var j = 0;  j < matrix[i].length; j++){
+                var prodInit = matrix[i][j]
+                var prodRow = prodInit
+                var rowDigits = 1
+                var prodCol = prodInit
+                var colDigits = 1
+                var prodDia = prodInit
+                var diaDigits = 1
+                for (let k=j+1; (k<j+m) && (k<matrix[i].length); k++){
+                    prodRow *= matrix[i][k]
+                    rowDigits += 1
+                }
+                for (let l=i+1; (l<i+m) && (l<matrix.length); l++){
+                    prodCol *= matrix[l][j]
+                    colDigits += 1
+                }
+                for (let di=i+1, dj=j+1; (di < i+m) && (di < matrix.length) && (dj < j+m) && (dj < matrix[di].length); di++, dj++){
+                    prodDia *= matrix[di][dj]
+                    diaDigits += 1
+                }
+                let prevProd = maxProduct;
+                maxProduct = Math.max(maxProduct, prodRow, prodCol, prodDia)
+            }
+        }
+        return maxProduct
+    }
+
 }(typeof exports === 'undefined' ? (self.solutions = {}) : exports));
 
 

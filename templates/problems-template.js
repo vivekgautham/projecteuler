@@ -36,6 +36,9 @@ const ProblemsTemplate = `
         <a class="item" href="mailto:vivegau@gmail.com">
           <i class="envelope icon link icon"></i>
         </a>
+        <a class="item" href="https://twitter.com/vivekgautham_s">
+          <i class="twitter icon link icon"></i>
+        </a>
       </h3>
 
       <h3 class="ui dividing header">
