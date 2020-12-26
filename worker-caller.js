@@ -5,6 +5,7 @@ export var callWorker = function(problem, instance){
 
         myWorker.addEventListener('message', function(e) {
             console.log('Worker said: ', e.data)
+            instance.end()
             problem.result = e.data
             instance.calculating =  false
           }, false);
@@ -13,9 +14,10 @@ export var callWorker = function(problem, instance){
 
         myWorker.postMessage({
             func: problem.functionName,
-            payload: allArgs // any kind of data, let the function decide whether it's useful
+            payload: allArgs
         })
         console.log('Message posted to worker')
+        instance.start()
     }
     else {
         console.log('Your browser doesn\'t support web workers.')

@@ -23,7 +23,10 @@ new Vue({
       problems: problemsdata.problems,
       filteredProblems: problemsdata.problems,
       calculating: false,
-      problemFactoidIdx: null
+      problemFactoidIdx: null,
+      startTime:null,
+      endTime:null,
+      timeElapsed:null
     },
 
     computed: {
@@ -45,6 +48,19 @@ new Vue({
     },
 
     methods: {
+
+      start() {
+        this.startTime = new Date();
+      },
+
+      end() {
+        this.endTime = new Date();
+        var timeDiff = this.endTime - this.startTime;
+        console.log("Time Taken ", timeDiff)
+        var milliSeconds = Math.round(timeDiff);
+        this.timeElapsed = milliSeconds < 1000 ? milliSeconds + " ms" : milliSeconds/1000 + " s";
+      },
+
       searchProblems(searchQuery){
         console.log(searchQuery)
         this.searchString = searchQuery
@@ -79,7 +95,9 @@ new Vue({
         setTimeout(() => {
             let allArgs = this.filteredProblems[this.activeIndex].inputs.map(input => input.value);
             console.log(allArgs)
+            this.start()
             this.filteredProblems[this.activeIndex].result = this.filteredProblems[this.activeIndex].function(...allArgs)
+            this.end()
             console.log("Computation complete")
             this.calculating = false
         }, 100)
@@ -109,6 +127,8 @@ new Vue({
             this.activeIndex = index
             console.log("Index set as ", index)
             this.calculating = false
+            this.startTime = null
+            this.endTime = null
             this.filteredProblems[index].result = null
             if ("inputs" in this.filteredProblems[index]) {
                 this.filteredProblems[index].inputs.forEach(function(val){

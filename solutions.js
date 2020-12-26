@@ -49,7 +49,7 @@
         return largestPrimeFactor
     }
 
-    exports.isPalindrome = function(number)  {
+    var isPalindrome = function(number)  {
         return number.toString() === number.toString().split("").reverse().join("")
     }
 
@@ -91,9 +91,11 @@
     }
 
     exports.smallestMultiple = function(n) {
-        var smallestMultiple = 0
-        var arr = _.range(1, parseInt(n)+1)
-        return arr.reduce(runningLCM, 1)
+        var arr = []
+        for (let i=1; i<parseInt(n)+1; i++){
+            arr.push(i)
+        }
+        return arr.reduce(runningLCM, 1).toLocaleString('fullwide', {useGrouping:false})
     }
 
     exports.differenceOfSumOfSquareAndSquareOfSum = function(n) {

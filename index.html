@@ -1,12 +1,23 @@
 <html>
     <head>
         <title>Project Euler - Explored</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js"></script>
         <script type="module" src="solutions.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
         <link rel="stylesheet" href="main.scss">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $("#backgroundCompute").click(function(){
+                    if (!window.Worker){
+                        alert("Backgroud Computation not supported in your browser!");
+                    }
+                });
+            });
+        </script>
+
     </head>
 
     <body>

@@ -65,17 +65,19 @@ const ProblemsTemplate = `
           </template>
       </div>
 
-      <br/><br/>
 
-      <button class="medium ui teal button" v-on:click="compute()" v-bind:disabled="calculating">
-        Compute
-      </button>
+      <div v-if="filteredProblems[activeIndex].function">
+        <br/>
+        <div class="ui teal button" v-on:click="compute()" v-bind:disabled="calculating">
+          Compute
+        </div>
 
-      <button class="medium ui teal button" v-on:click="computeOnWorkerAndNotify()">
-        Compute in Background
-      </button>
+        <div id="backgroundCompute" class="ui teal button" v-on:click="computeOnWorkerAndNotify()">
+          Compute in Background
+        </div>
+      </div>
 
-      <br/><br/>
+      <br/>
 
       <template v-if="calculating">
         <div class="ui active left inline loader">
@@ -87,6 +89,14 @@ const ProblemsTemplate = `
           <p>
             {{filteredProblems[activeIndex].result}}
           </p>
+        </div>
+        <div class="ui mini horizontal statistic">
+          <div class="value">
+            {{ timeElapsed }}
+          </div>
+          <div class="label">
+            Run Time
+          </div>
         </div>
       </template>
 
@@ -101,9 +111,9 @@ const ProblemsTemplate = `
         </button>
       </div>
 
+
     </div>
   </div>
-
 </div>
 `
 export { ProblemsTemplate }
