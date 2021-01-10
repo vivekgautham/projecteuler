@@ -22,6 +22,7 @@ new Vue({
       activeIndex: 0,
       problems: problemsdata.problems,
       filteredProblems: problemsdata.problems,
+      currentProblemId: 1,
       calculating: false,
       problemFactoidIdx: null,
       startTime:null,
@@ -31,9 +32,9 @@ new Vue({
 
     computed: {
       problemFactoids: function(val) {
-          if (factoids.hasOwnProperty(this.activeIndex+1)){
+          if (factoids.hasOwnProperty(this.currentProblemId)){
             this.problemFactoidIdx = 0
-            return factoids[this.activeIndex+1]
+            return factoids[this.currentProblemId]
           }
           else{
             this.problemFactoidIdx = null
@@ -74,6 +75,7 @@ new Vue({
         if (this.filteredProblems.length > 0){
             console.log("Length of search is  ", this.filteredProblems.length)
             this.activeIndex = 0
+            this.currentProblemId = this.filteredProblems[0].id
         }
         else{
             alert("No results found...Try different Search term")
@@ -86,6 +88,10 @@ new Vue({
         this.searchString = ''
         this.filteredProblems = this.problems.slice()
         this.activeIndex = 0
+        this.filteredProblems.forEach(function(val, key){
+          val.active = false
+        })
+        this.filteredProblems[this.activeIndex].active = true
       },
       compute() {
         this.calculating = true
@@ -124,6 +130,7 @@ new Vue({
                 val.active = false
             })
             this.filteredProblems[index].active = true
+            this.currentProblemId = this.filteredProblems[index].id
             this.activeIndex = index
             console.log("Index set as ", index)
             this.calculating = false

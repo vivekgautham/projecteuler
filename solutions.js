@@ -256,6 +256,38 @@
         return maxProduct
     }
 
+    var collatzDict = new Map()
+
+    exports.longestCollatzSequence = function (n) {
+        n  = parseInt(n)
+        var largestSeq = ''
+        var largestSeqLen = 0
+        for (var i=1; i<n; i++){
+            var num = i;
+            var currentSeq = [num]
+            while (!(num in collatzDict)){
+                var curNum = num;
+                if (num % 2 === 0){
+                    num = num/2
+                }
+                else {
+                    num = 3*num+1
+                }
+                currentSeq.push(num)
+                collatzDict[curNum] = num
+            }
+            while (num !== 1){
+                currentSeq.push(collatzDict[num])
+                num = collatzDict[num]
+            }
+            if (currentSeq.length > largestSeqLen){
+                largestSeq = "Largest Sequence is for number " + i + " -  Length of Sequence: " + currentSeq.length + " and the sequence is " + currentSeq.join(' -> ')
+                largestSeqLen = currentSeq.length
+            }
+        }
+        return largestSeq
+    }
+
 }(typeof exports === 'undefined' ? (self.solutions = {}) : exports));
 
 

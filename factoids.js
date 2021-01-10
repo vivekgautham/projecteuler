@@ -11,5 +11,9 @@ export default
 
         <br/> Infact, if you input multiples of 10 of any number, you'll see a similar pattern. And, the pattern kind of breaks after certain times. <br/>
         `
+    ],
+    14: [
+        `The members of the sequence produced by the Collatz are sometimes known as hailstone numbers.  <br/>`,
+        `Paul Erdős said about the Collatz conjecture: "Mathematics may not be ready for such problems."<br/>`,
     ]
 }
