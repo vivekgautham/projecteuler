@@ -85,7 +85,7 @@ const ProblemsTemplate = `
       </template>
 
       <template v-if="!calculating && filteredProblems[activeIndex].result">
-        <div class="ui compact segment">
+        <div class="ui compact segment" style="width:90%">
           <p>
             {{filteredProblems[activeIndex].result}}
           </p>
