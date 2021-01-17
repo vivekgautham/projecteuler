@@ -111,14 +111,17 @@ const ProblemsTemplate = `
         </button>
       </div>
 
+      </br>
+      <button class="ui teal button" v-on:click="openContributeModal()">Contribute Solution</button>
+      <!-- use the modal component, pass in the prop -->
+      <contributemodal  v-bind:showcontribute="showcontribute" v-on:approved="approved" v-on:deny="deny">
+
+      </contributemodal>
 
     </div>
   </div>
 </div>
 `
 export { ProblemsTemplate }
-/*
-$("factoidNext").click(function(){
-    $('.ui.raised.segment').transition('horizontal flip');
-});
-*/
+
+// :show.sync="showModal"

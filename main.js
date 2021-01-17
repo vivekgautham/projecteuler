@@ -27,7 +27,8 @@ new Vue({
       problemFactoidIdx: null,
       startTime:null,
       endTime:null,
-      timeElapsed:null
+      timeElapsed:null,
+      showcontribute: false
     },
 
     computed: {
@@ -116,8 +117,6 @@ new Vue({
       },
 
       factoidNext() {
-        console.log("Clicked")
-        //$(this).parent().transition('glow')
         this.problemFactoidIdx += 1
         if (this.problemFactoidIdx  >= this.problemFactoids.length){
           this.problemFactoidIdx = 0
@@ -144,5 +143,21 @@ new Vue({
             }
         }
       },
+      openContributeModal() {
+        //this.$refs.contribmodal.show()
+        console.log("Contribute clicked...")
+        this.showcontribute = true;
+      },
+
+      approved: function() {
+        this.showcontribute = false;
+          alert('APPROVED!!!');
+        },
+
+      deny: function() {
+      this.showcontribute = false;
+        alert('DENY!!!');
+      }
+
     }
   })
