@@ -39,6 +39,9 @@ const ProblemsTemplate = `
         <a class="item" href="https://twitter.com/vivekgautham_s">
           <i class="twitter icon link icon"></i>
         </a>
+        <a class="item" href="https://projecteuler.net/archives">
+          <i class="linkify icon link icon"></i>
+        </a>
       </h3>
 
       <h3 class="ui dividing header">
@@ -86,9 +89,7 @@ const ProblemsTemplate = `
 
       <template v-if="!calculating && filteredProblems[activeIndex].result">
         <div class="ui compact segment" style="width:90%">
-          <p>
-            {{filteredProblems[activeIndex].result}}
-          </p>
+          <span v-html="filteredProblems[activeIndex].result"></span>
         </div>
         <div class="ui mini horizontal statistic">
           <div class="value">

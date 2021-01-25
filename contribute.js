@@ -15,12 +15,12 @@ Vue.component('contributemodal', {
     data() {
         return {
             code: "",
+            replyToemail: "",
         }
     },
 
     watch: {
         showcontribute: function(val) {
-            console.log('Show COntribute Called 1')
             if (val) {
                 this.control.modal('show');
                 this.$parent.showcontribute = false;

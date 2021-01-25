@@ -597,7 +597,23 @@ export default
         <p>Find the sum of all numbers which are equal to the sum of the factorial of their digits.</p>
         <p class="smaller">Note: As 1! = 1 and 2! = 2 are not sums they are not included.</p>
 
-        `},
+        `,
+        "inputs": [
+            {
+                name: 'n',
+                value: null,
+                comment: 'Enter a number under which to compute sum of all the curious numbers',
+                placeholder: 'Enter a number ',
+                label: 'N',
+                type: 'input',
+                subtype: 'number',
+            },
+        ],
+        "functionName": 'curiousDigitFactorials',
+        "function": self.solutions['curiousDigitFactorials'],
+        "result": null
+
+        },
         {"title":"Circular primes",
         "id":35,
         "active":false,
@@ -606,7 +622,22 @@ export default
         <p>There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.</p>
         <p>How many circular primes are there below one million?</p>
 
-        `},
+        `,
+        "inputs": [
+            {
+                name: 'n',
+                value: null,
+                comment: 'Enter a number under which to compute circular primes',
+                placeholder: 'Enter a number ',
+                label: 'N',
+                type: 'input',
+                subtype: 'number',
+            },
+        ],
+        "functionName": 'circularPrimesBelowN',
+        "function": self.solutions['circularPrimesBelowN'],
+        "result": null
+        },
         {"title":"Double-base palindromes",
         "id":36,
         "active":false,
@@ -786,11 +817,11 @@ export default
         "active":false,
         "description":`<p>There are exactly ten ways of selecting three from five, 12345:</p>
         <p class="center">123, 124, 125, 134, 135, 145, 234, 235, 245, and 345</p>
-        <p>In combinatorics, we use the notation, $\displaystyle \binom 5 3 = 10$.</p>
-        <p>In general, $\displaystyle \binom n r = \dfrac{n!}{r!(n-r)!}$, where $r \le n$, $n! = n \times (n-1) \times ... \times 3 \times 2 \times 1$, and $0! = 1$.
+        <p>In combinatorics, we use the notation, <sub>5</sub>C<sub>3</sub> = 10.</p>
+        <p>In general, <sub>n</sub>C<sub>r</sub>  = n!/(r!(n-r)!}, where r <= n.
         </p>
-        <p>It is not until $n = 23$, that a value exceeds one-million: $\displaystyle \binom {23} {10} = 1144066$.</p>
-        <p>How many, not necessarily distinct, values of $\displaystyle \binom n r$ for $1 \le n \le 100$, are greater than one-million?</p>
+        <p>It is not until n = 23, that a value exceeds one-million: <sub>23</sub>C<sub>10</sub> = 1144066$.</p>
+        <p>How many, not necessarily distinct, values of <sub>n</sub>C<sub>r</sub> for 1 <= n <= 100, are greater than one-million?</p>
         `},
         {"title":"Poker hands",
         "id":54,

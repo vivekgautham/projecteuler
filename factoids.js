@@ -14,6 +14,6 @@ export default
     ],
     14: [
         `The members of the sequence produced by the Collatz are sometimes known as hailstone numbers.  <br/>`,
-        `Paul Erdős said about the Collatz conjecture: "Mathematics may not be ready for such problems."<br/>`,
+        `Paul Erdos said about the Collatz conjecture: "Mathematics may not be ready for such problems."<br/>`,
     ]
 }

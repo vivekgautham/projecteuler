@@ -288,6 +288,80 @@
         return largestSeq
     }
 
+    var digitFactorialVals = new Map()
+
+    var factorial = function (num) {
+        var res=1
+        for (var i = 2; i <= num; i++)
+            res = res * i
+        return res
+    }
+
+    var factorialDigitSum = function (n) {
+        var factorialSum = 0
+        var nStr = n.toString()
+        for (var i=0; i<nStr.length; i++){
+            var d = parseInt(nStr[i])
+            if (d in digitFactorialVals){
+                factorialSum += digitFactorialVals[d]
+            }
+            else {
+                digitFactorialVals[d] = factorial(d)
+            }
+        }
+        return factorialSum
+    }
+
+    exports.curiousDigitFactorials = function(num) {
+        var untilN = parseInt(num)
+        var seq =  []
+        var allCuriousSum = 0
+        for (var n=10; n <= untilN; n++){
+            var factorialSum = factorialDigitSum(n)
+            if (factorialSum == n){
+                seq.push(n)
+                allCuriousSum += n
+            }
+        }
+        var result = "All Curious Digit Factorials until " + untilN.toString() +  " are </br>" + seq.join(' </br> ')
+        result += '</br> Sum = ' + allCuriousSum.toString()
+        return result
+    }
+
+    var circularShift = function (arr) {
+        arr.unshift(arr.pop())
+        console.log(arr)
+        return arr
+    }
+
+    exports.circularPrimesBelowN = function (num) {
+        num = parseInt(num)
+        while (num > primeEratosthenes.length){
+            exports.sieveOfEratosthenes(nthLargestPrimeSoFar+5)
+        }
+        var seq = [];
+        for (var i=0; i<num; i++){
+            if (primeEratosthenes[i]){
+                var p = i+1;
+                var rp = p;
+                var times = p.toString().length-1;
+                var satifies = true;
+                while (times > 0) {
+                    rp = parseInt(circularShift(rp.toString().split('')).join(''));
+                    times--;
+                    if (!primeEratosthenes[rp-1]){
+                        satifies = false;
+                        break;
+                    }
+                }
+                if (satifies)
+                    seq.push(i+1);
+            }
+        }
+        var result = "Total count = " + seq.length + " Circular Primes until " + num.toString() +  " are </br>" + seq.join(' </br> ')
+        return result
+    }
+
 }(typeof exports === 'undefined' ? (self.solutions = {}) : exports));
 
 
