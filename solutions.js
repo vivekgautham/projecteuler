@@ -367,20 +367,32 @@
         while (num > primeEratosthenes.length) {
             exports.sieveOfEratosthenes(nthLargestPrimeSoFar + 5)
         }
-        var cumulativePrimeSum = [];
+        var numbers = [];
         var cp = 0;
         var result = 0;
         var resultSequence = [];
         for (var i = 0; i < num + 1; i++) {
             if (primeEratosthenes[i]) {
-                cumulativePrimeSum.push(i + 1);
+                numbers.push(i + 1);
                 cp = cp + i + 1;
                 if (cp > num) {
                     break;
                 }
                 if (primeEratosthenes[cp - 1]) {
                     result = cp;
-                    resultSequence = [...cumulativePrimeSum];
+                    resultSequence = [...numbers];
+                }
+                else {
+                    var newnum = cp;
+                    for (var i = 0; i < numbers.length; i++) {
+                        newnum -= numbers[i];
+                        if (primeEratosthenes[newnum - 1]) {
+                            if (newnum > result) {
+                                result = newnum;
+                                resultSequence = [...numbers.slice(i + 1)];
+                            }
+                        }
+                    }
                 }
             }
         }
