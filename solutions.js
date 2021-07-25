@@ -384,7 +384,7 @@
             }
             //console.log(cumulativePrimeSum);
         }
-        return result;
+        return "Largest Cumulative Sum = " + result + " and the numbers are " + cumulativePrimeSum.join(' + ');
     }
 
 }(typeof exports === 'undefined' ? (self.solutions = {}) : exports));
