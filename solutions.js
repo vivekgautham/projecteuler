@@ -384,12 +384,12 @@
                 }
                 else {
                     var newnum = cp;
-                    for (var i = 0; i < numbers.length; i++) {
-                        newnum -= numbers[i];
+                    for (var j = 0; j < numbers.length; j++) {
+                        newnum -= numbers[j];
                         if (primeEratosthenes[newnum - 1]) {
                             if (newnum > result) {
                                 result = newnum;
-                                resultSequence = [...numbers.slice(i + 1)];
+                                resultSequence = [...numbers.slice(j + 1)];
                             }
                         }
                     }
