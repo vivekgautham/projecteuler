@@ -370,19 +370,16 @@
         var cumulativePrimeSum = [];
         var cp = 0;
         var result = 0;
-        for (var i = 0; i < primeEratosthenes.length; i++) {
+        var resultSequence = [];
+        for (var i = 0; i < num + 1; i++) {
             if (primeEratosthenes[i]) {
                 cumulativePrimeSum.push(i + 1);
                 cp = cp + i + 1;
+                if (primeEratosthenes[cp - 1]) {
+                    result = cp;
+                    resultSequence = [...cumulativePrimeSum];
+                }
             }
-            if (cp > num) {
-                break;
-            }
-            if (primeEratosthenes[cp - 1]) {
-                result = cp;
-                //console.log("Prime sum ", result);
-            }
-            //console.log(cumulativePrimeSum);
         }
         return "Largest Cumulative Sum = " + result + " and the numbers are " + cumulativePrimeSum.join(' + ');
     }
