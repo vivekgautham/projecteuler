@@ -375,10 +375,11 @@
                 cumulativePrimeSum.push(cp + i + 1);
                 cp = cp + i + 1;
             }
-            if (primeEratosthenes[cp]) {
+            if (primeEratosthenes[cp - 1]) {
                 result = cp;
+                console.log("Prime sum ", result);
             }
-            console.log(cumulativePrimeSum);
+            //console.log(cumulativePrimeSum);
         }
         return result;
     }
