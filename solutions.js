@@ -375,10 +375,8 @@
             if (primeEratosthenes[i]) {
                 numbers.push(i + 1);
                 cp = cp + i + 1;
-                if (cp > num) {
-                    break;
-                }
-                if (primeEratosthenes[cp - 1]) {
+
+                if (primeEratosthenes[cp - 1] && ((cp - 1) <= num)) {
                     result = cp;
                     resultSequence = [...numbers];
                 }
@@ -387,12 +385,15 @@
                     for (var j = 0; j < numbers.length; j++) {
                         newnum -= numbers[j];
                         if (primeEratosthenes[newnum - 1]) {
-                            if (newnum > result) {
+                            if (newnum > result && newnum <= num) {
                                 result = newnum;
                                 resultSequence = [...numbers.slice(j + 1)];
                             }
                         }
                     }
+                }
+                if (cp > num) {
+                    break;
                 }
             }
         }
