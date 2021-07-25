@@ -375,6 +375,9 @@
                 cumulativePrimeSum.push(cp + i + 1);
                 cp = cp + i + 1;
             }
+            if (cp > num) {
+                break;
+            }
             if (primeEratosthenes[cp - 1]) {
                 result = cp;
                 console.log("Prime sum ", result);
