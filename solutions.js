@@ -375,6 +375,9 @@
             if (primeEratosthenes[i]) {
                 cumulativePrimeSum.push(i + 1);
                 cp = cp + i + 1;
+                if (cp > num) {
+                    break;
+                }
                 if (primeEratosthenes[cp - 1]) {
                     result = cp;
                     resultSequence = [...cumulativePrimeSum];
