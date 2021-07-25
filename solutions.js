@@ -370,7 +370,7 @@
         var cumulativePrimeSum = [];
         var cp = 0;
         var result = 0;
-        for (var i = 0; i < num; i++) {
+        for (var i = 0; i < primeEratosthenes.length; i++) {
             if (primeEratosthenes[i]) {
                 cumulativePrimeSum.push(cp + i + 1);
                 cp = cp + i + 1;
@@ -378,6 +378,7 @@
             if (primeEratosthenes[cp]) {
                 result = cp;
             }
+            console.log(cumulativePrimeSum);
         }
         return result;
     }
