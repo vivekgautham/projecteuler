@@ -5,6 +5,14 @@ import {
     ContributeTemplate
 } from './templates/contribute-template.js'
 
+function onFormSubmitted(message) {
+
+}
+
+function onError(message) {
+
+}
+
 Vue.component('contributemodal', {
     template: ContributeTemplate,
 
@@ -35,6 +43,19 @@ Vue.component('contributemodal', {
         centered: true,
         onApprove: function(val) {
             console.log('Do Nothing')
+            var data = {
+                "access_token": "0qlj8ov1yeggtqb0szrg50or",
+                "text": "Hi",
+                "subject": "Sub"
+            };
+
+            //$.ajax({ type: 'POST', url: 'https://postmail.invotes.com/send', data: data, success: onFormSubmitted });
+
+            $.post('https://postmail.invotes.com/send',
+                data,
+                onFormSubmitted
+            ).fail(onError);
+
         },
         onDeny: function(val) {
             console.log('Do Nothing')
