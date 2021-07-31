@@ -408,18 +408,14 @@
         var allSum = 0;
         var allRes = [];
         for (var i = 1; i <= num; i++) {
-            console.log("Running ", i);
             var nStr = i.toString();
-            console.log("Running ", nStr);
             var sum = 0;
             for (var j = 0; j < nStr.length; j++) {
-                console.log("Running ", nStr[j]);
                 sum += Math.pow(parseInt(nStr[j]), n);
             }
             if (sum == i) {
-                console.log("Found ", sum);
                 allSum += sum;
-                allRes.push(allRes);
+                allRes.push(sum);
             }
         }
         return "Digital N th power sum = " + allSum + " and " + allRes.join(' + ');
