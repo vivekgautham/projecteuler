@@ -408,8 +408,8 @@
             console.log("Running ", i);
             var nStr = i.toString();
             var sum = 0;
-            for (var i = 0; i < nStr.length; i++) {
-                sum += Math.pow(parseInt(nStr[i]), n);
+            for (var j = 0; j < nStr.length; j++) {
+                sum += Math.pow(parseInt(nStr[j]), n);
             }
             if (sum == i) {
                 console.log("Found ", sum);
