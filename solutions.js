@@ -400,6 +400,24 @@
         return "Largest Cumulative Sum = " + result + " and the numbers are " + resultSequence.join(' + ');
     }
 
+    exports.digitalNthPower = function (num, n) {
+        num = parseInt(num);
+        var allSum = 0;
+        var allRes = [];
+        for (var i = 1; i <= num; i++) {
+            var nStr = i.toString();
+            var sum = 0;
+            for (var i = 0; i < nStr.length; i++) {
+                sum += Math.pow(parseInt(nStr[i]), n);
+            }
+            if (sum == i) {
+                allSum += sum;
+                allRes.push(allRes);
+            }
+        }
+        return "Digital N th power sum = " + allSum + " and " + allRes.join(' + ');
+    }
+
 }(typeof exports === 'undefined' ? (self.solutions = {}) : exports));
 
 

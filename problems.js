@@ -566,9 +566,22 @@ export default
         9474 = 9<sup>4</sup> + 4<sup>4</sup> + 7<sup>4</sup> + 4<sup>4</sup></blockquote>
         <p class="smaller">As 1 = 1<sup>4</sup> is not a sum it is not included.</p>
         <p>The sum of these numbers is 1634 + 8208 + 9474 = 19316.</p>
-        <p>Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.</p>
-
-        `},
+        <p>Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.</p>`,
+                "inputs": [
+                    {
+                        name: 'n',
+                        value: null,
+                        comment: 'Enter a number under which to sum of digital fifth powers  ',
+                        placeholder: 'Enter a number ',
+                        label: 'N',
+                        type: 'input',
+                        subtype: 'number',
+                    },
+                ],
+                "functionName": 'digitalFifthPower',
+                "function": self.solutions['digitalFifthPower'],
+                "result": null
+            },
             {
                 "title": "Coin sums",
                 "id": 31,
