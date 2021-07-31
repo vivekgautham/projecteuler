@@ -403,11 +403,9 @@
     exports.digitalNthPower = function (num, n) {
         num = parseInt(num);
         n = parseInt(n);
-        console.log(num);
-        console.log(n);
         var allSum = 0;
         var allRes = [];
-        for (var i = 1; i <= num; i++) {
+        for (var i = 10; i <= num; i++) {
             var nStr = i.toString();
             var sum = 0;
             for (var j = 0; j < nStr.length; j++) {
