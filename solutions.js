@@ -405,12 +405,14 @@
         var allSum = 0;
         var allRes = [];
         for (var i = 1; i <= num; i++) {
+            console.log("Running ", i);
             var nStr = i.toString();
             var sum = 0;
             for (var i = 0; i < nStr.length; i++) {
                 sum += Math.pow(parseInt(nStr[i]), n);
             }
             if (sum == i) {
+                console.log("Found ", sum);
                 allSum += sum;
                 allRes.push(allRes);
             }
