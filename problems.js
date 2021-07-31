@@ -571,15 +571,24 @@ export default
                     {
                         name: 'n',
                         value: null,
-                        comment: 'Enter a number under which to sum of digital fifth powers  ',
+                        comment: 'Enter a number under which to sum of digital Nth powers  ',
                         placeholder: 'Enter a number ',
                         label: 'N',
                         type: 'input',
                         subtype: 'number',
                     },
+                    {
+                        name: 'nthPower',
+                        value: null,
+                        comment: 'Enter Nth power  ',
+                        placeholder: 'Enter Nth power ',
+                        label: 'Nth Power',
+                        type: 'input',
+                        subtype: 'number',
+                    },
                 ],
-                "functionName": 'digitalFifthPower',
-                "function": self.solutions['digitalFifthPower'],
+                "functionName": 'digitalNthPower',
+                "function": self.solutions['digitalNthPower'],
                 "result": null
             },
             {
