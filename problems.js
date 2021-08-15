@@ -444,7 +444,7 @@ export default
                 "title": "Names scores",
                 "id": 22,
                 "active": false,
-                "description": `<p>Using <a href="project/resources/p022_names.txt">names.txt</a> (right click and 'Save Link/Target As...'), a 46K text file containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.</p>
+                "description": `<p> Begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.</p>
         <p>For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938 × 53 = 49714.</p>
         <p>What is the total of all the name scores in the file?</p>
 
@@ -523,7 +523,7 @@ export default
         <p>The incredible formula n<sup>2</sup> - 79n + 1601 was discovered, which produces 80 primes for the consecutive values 0 <= n <=79. The product of the coefficients, −79 and 1601, is −126479.</p>
         <p>Considering quadratics of the form:</p>
         <blockquote>
-        n<sup>2</sup> + an + b, where |a| < 1000 and |b| <= 1000 <br /><br /><div>where |n| is the modulus/absolute value of n <br />e.g. $|11| = 11$ and $|-4| = 4$</div>
+        n<sup>2</sup> + an + b, where |a| < 1000 and |b| <= 1000 <br /><br /><div>where |n| is the modulus/absolute value of n <br />e.g. |11| = 11 and |-4| = 4</div>
         </blockquote>
         <p>Find the product of the coefficients, a and b, for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n = 0.</p>
         `},
