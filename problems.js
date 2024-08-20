@@ -1680,7 +1680,7 @@ export default
         <p>Let f(n) be the sum of the <strong>greatest common divisor</strong> of d and n/d over all positive divisors d of n
         <p>Let F be the summatory function of f</p>
         <p>You are given that F(10)=32 and F(1000)=12776.</p>
-        <p>Find F(10^{15}).</p>
+        <p>Find F(10<sup>15</sup>).</p>
         `},
 
         ]
