@@ -1672,10 +1672,10 @@ export default
 
         `},
             {
-            "title": "GCD of Divisors",
-            "id": 530,
-            "active": false,
-            "description": `
+                "title": "GCD of Divisors",
+                "id": 530,
+                "active": false,
+                "description": `
         <p>Every divisor $d$ of a number $n$ has a <strong>complementary divisor</strong> $n/d$.</p>
         <p>Let $f(n)$ be the sum of the <strong>greatest common divisor</strong> of $d$ and $n/d$ over all positive divisors $d$ of $n$, that is
         $f(n)=\displaystyle\sum_{d\mid n}\gcd(d,\frac n d)$.</p>
