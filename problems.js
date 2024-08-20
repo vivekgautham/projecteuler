@@ -1670,7 +1670,20 @@ export default
         <p>The next such arrangement, for which there is exactly 50% chance of taking two blue discs at random, is a box containing eighty-five blue discs and thirty-five red discs.</p>
         <p>By finding the first arrangement to contain over 10<sup>12</sup> = 1,000,000,000,000 discs in total, determine the number of blue discs that the box would contain.</p>
 
-`},
+        `},
+            {
+            "title": "GCD of Divisors",
+            "id": 530,
+            "active": false,
+            "description": `
+        <p>Every divisor $d$ of a number $n$ has a <strong>complementary divisor</strong> $n/d$.</p>
+        <p>Let $f(n)$ be the sum of the <strong>greatest common divisor</strong> of $d$ and $n/d$ over all positive divisors $d$ of $n$, that is
+        $f(n)=\displaystyle\sum_{d\mid n}\gcd(d,\frac n d)$.</p>
+        <p>Let $F$ be the summatory function of $f$, that is
+        $F(k)=\displaystyle\sum_{n=1}^k f(n)$.</p>
+        <p>You are given that $F(10)=32$ and $F(1000)=12776$.</p>
+        <p>Find $F(10^{15})$.</p>
+        `},
 
         ]
     }
