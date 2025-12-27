@@ -1,3 +1,7 @@
-An exploration of Project Euler problems.
+# Project Euler Solutions
 
-The project is currently hosted at [Project Euler](https://projecteuler.netlify.app/)
+This repository contains my solutions to Project Euler problems.
+
+## How to use
+
+Each problem's solution is located in `solutions.js` and can be tested via `solution-tests.js`.
